@@ -107,8 +107,8 @@
 
       <section class="mt-20 max-w-7xl px-5">
         <h1 class="text-center font-bold text-4xl my-6">About the Campaign</h1>
-        <div class="flex justify-center items-center gap-4 w-8/12 mx-auto">
-          <div>
+        <div class="md:flex justify-center items-center gap-4 w-8/12 mx-auto">
+          <div class="my-6">
             <img src="./assets/about.png" alt="" />
           </div>
           <div class="text-[#1F2937]">
@@ -131,7 +131,7 @@
       </section>
 
       <!-- Impact -->
-      <section class="px-5 text-center py-8 bg-[#CFF0DC] my-20">
+      <section class="px-5 text-center py-8 bg-[#CFF0DC] mt-20">
         <h2 class="text-xl mb-3 font-bold">Our Impact</h2>
         <div class="grid gap-8 grid-cols-3 max-w-7xl mx-auto">
           <div
@@ -150,8 +150,57 @@
           </div>
         </div>
       </section>
+
+      <!-- Form -->
+
+      <section class="bg-[#166534] py-16">
+        <div class="max-w-md mx-auto bg-[#15803D] rounded-lg shadow-lg p-8">
+          <h2 class="text-2xl font-bold text-center text-white mb-6">
+            Plant a Tree Today
+          </h2>
+
+          <form class="space-y-4">
+            <!-- Name -->
+            <input
+              type="text"
+              placeholder="Your Name"
+              class="w-full px-4 py-2 border border-gray-300 rounded-md bg-white"
+            />
+
+            <!-- Email -->
+            <input
+              type="email"
+              placeholder="Your Email Address"
+              class="w-full px-4 py-2 border border-gray-300 rounded-md bg-white"
+            />
+
+            <!-- Number of Trees -->
+            <select
+              class="w-full px-4 py-2 border border-gray-300 rounded-md bg-white"
+            >
+              <option value="">Number of Trees</option>
+              <option value="1">1 Tree</option>
+              <option value="5">5 Trees</option>
+              <option value="10">10 Trees</option>
+              <option value="50">50 Trees</option>
+            </select>
+
+            <!-- Button -->
+            <button
+              type="submit"
+              class="w-full bg-yellow-400 text-green-800 font-semibold py-2 px-4 rounded-3xl hover:bg-yellow-500 transition"
+            >
+              Donate Now
+            </button>
+          </form>
+        </div>
+      </section>
     </main>
-    <footer></footer>
+    <footer class="bg-[#14532D] py-5 text-center">
+      <p class="text-white font-light text-sm">
+        © 2025 Green Earth. All Rights Reserved.
+      </p>
+    </footer>
     <script src="./script.js"></script>
   </body>
 </html>
