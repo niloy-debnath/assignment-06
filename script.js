@@ -11,9 +11,9 @@ const loadCategories = () => {
 };
 
 const displayCategories = (category) => {
-  console.log(category);
+  //   console.log(category);
   category.forEach((cat) => {
-    console.log(cat.category_name);
+    // console.log(cat.category_name);
     // const li = document.createElement("li");
     categoriesContainer.innerHTML += `
     <li class="cursor-pointer hover:bg-[#15803D] hover:py-2 hover:text-white hover:pl-2 hover:rounded-sm">
@@ -22,4 +22,27 @@ const displayCategories = (category) => {
     `;
   });
 };
+
+categoriesContainer.addEventListener("click", (e) => {
+  const allLi = document.querySelectorAll("li");
+  allLi.forEach((li) => {
+    li.classList.remove(
+      "bg-[#15803D]",
+      "py-2",
+      "text-white",
+      "rounded-sm",
+      "pl-2"
+    );
+  });
+  if (e.target.localName === "li") {
+    console.log();
+    e.target.classList.add(
+      "bg-[#15803D]",
+      "py-2",
+      "text-white",
+      "rounded-sm",
+      "px-2"
+    );
+  }
+});
 loadCategories();
