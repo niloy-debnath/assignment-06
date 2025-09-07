@@ -68,14 +68,14 @@ const displayCategoriesDetails = (categoriesCard) => {
   categoriesCard.forEach((card) => {
     cardContainer.innerHTML += `
    <div class="bg-white p-3 rounded-md">
-            <div class="aspect-[4/3] w-full">
+            <div class="md:aspect-[4/3] w-full">
               <img
-                class="rounded-md w-full h-48 object-cover"
+                class="rounded-md w-full h-48 md:h-48 md:object-cover"
                 src="${card.image}"
               />
             </div>
             <div class="flex-1 flex flex-col">
-              <h2 class="font-bold my-3"> ${card.name} </h2>
+              <h2 class="font-bold md:my-3"> ${card.name} </h2>
               <p class="text-[#71717A] text-sm flex-1">
 ${card.description}
               </p>

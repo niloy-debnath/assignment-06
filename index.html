@@ -64,13 +64,7 @@
             >
               <li><a>About</a></li>
               <li><a>Gallery</a></li>
-              <!-- <li>
-                <a>Parent</a>
-                <ul class="p-2">
-                  <li><a>Submenu 1</a></li>
-                  <li><a>Submenu 2</a></li>
-                </ul>
-              </li> -->
+
               <li><a>Plant a Tree</a></li>
             </ul>
           </div>
@@ -80,15 +74,7 @@
           <ul class="menu menu-horizontal px-1 text-white">
             <li><a>About</a></li>
             <li><a>Gallery</a></li>
-            <!-- <li>
-              <details>
-                <summary>Parent</summary>
-                <ul class="p-2">
-                  <li><a>Submenu 1</a></li>
-                  <li><a>Submenu 2</a></li>
-                </ul>
-              </details>
-            </li> -->
+
             <li><a>Plant a Tree</a></li>
           </ul>
         </div>
@@ -102,7 +88,7 @@
     <main>
       <!-- Hero Section -->
       <section class="flex bg-[#CFF0DC] justify-between items-center gap-8">
-        <div class="">
+        <div class="hidden md:block">
           <img src="./assets/hero-leaf1.png" alt="" />
         </div>
         <div class="text-center">
@@ -114,21 +100,25 @@
             for future generations.
           </p>
           <button
-            class="bg-[#FACC15] w-full md:w-fit py-1 md:px-4 md:py-2 rounded-3xl text-[#15803D] my-5 text-xs md:text-base"
+            class="bg-[#FACC15] w-fit py-1 px-4 md:py-2 rounded-3xl text-[#15803D] my-5 text-xs md:text-base"
           >
             Get Involved
           </button>
         </div>
         <div>
-          <img src="./assets/hero-leaf2.png" alt="" />
+          <img src="./assets/hero-leaf2.png" alt="" class="hidden md:block" />
         </div>
       </section>
 
-      <h1 class="text-center mt-12 font-bold text-4xl">Choose Your Trees</h1>
+      <h1 class="text-center mt-12 font-bold text-4xl mb-4">
+        Choose Your Trees
+      </h1>
 
       <!-- Choose your trees -->
-      <section class="flex justify-center px-3 max-w-7xl mx-auto gap-5">
-        <aside class="w-2/12 hidden md:block">
+      <section
+        class="md:flex md:justify-center px-3 md:max-w-7xl md:mx-auto gap-5"
+      >
+        <aside class="md:w-2/12 text-center md:text-start">
           <h1 class="md:text-3xl mb-3 text-lg font-bold">categories</h1>
           <ul
             id="categories-container"
@@ -137,7 +127,7 @@
         </aside>
         <section
           id="card-container"
-          class="w-8/12 grid gap-2 md:grid-cols-3"
+          class="md:w-8/12 grid gap-2 md:grid-cols-3 mt-5 md:mt-0"
         ></section>
         <aside class="w-2/12 border-2 border-red-500">
           <h1>cart</h1>
