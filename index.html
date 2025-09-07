@@ -125,13 +125,28 @@
             class="flex text-[#1F2937] flex-col gap-4 justify-start list-none"
           ></ul>
         </aside>
+        <!-- Open the modal using ID.showModal() method -->
+        <!-- <button class="btn" onclick="my_modal_5.showModal()">open modal</button> -->
+        <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
+          <div class="modal-box">
+            <div id="modal-container"></div>
+            <div class="modal-action">
+              <form method="dialog">
+                <!-- if there is a button in form, it will close the modal -->
+                <button class="btn">Close</button>
+              </form>
+            </div>
+          </div>
+        </dialog>
         <section
           id="card-container"
           class="md:w-8/12 grid gap-2 md:grid-cols-3 mt-5 md:mt-0"
         ></section>
-        <aside class="w-2/12 border-2 border-red-500">
-          <h1>cart</h1>
-        </aside>
+        <section class="md:w-2/12 rounded-md p-2 bg-white">
+          <h1 class="font-bold">Your Cart</h1>
+          <div id="cart-container" class="my-5"></div>
+          <h1 class="my-2">Total: <span id="total">0</span>৳</h1>
+        </section>
       </section>
 
       <!-- Campaign -->
