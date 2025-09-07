@@ -113,6 +113,9 @@
       <h1 class="text-center mt-12 font-bold text-4xl mb-4">
         Choose Your Trees
       </h1>
+      <div id="spinner" class="flex justify-center hidden">
+        <span class="loading loading-bars loading-xl text-center"></span>
+      </div>
 
       <!-- Choose your trees -->
       <section
@@ -125,19 +128,18 @@
             class="flex text-[#1F2937] flex-col gap-4 justify-start list-none"
           ></ul>
         </aside>
-        <!-- Open the modal using ID.showModal() method -->
-        <!-- <button class="btn" onclick="my_modal_5.showModal()">open modal</button> -->
+
         <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
           <div class="modal-box">
             <div id="modal-container"></div>
             <div class="modal-action">
               <form method="dialog">
-                <!-- if there is a button in form, it will close the modal -->
                 <button class="btn">Close</button>
               </form>
             </div>
           </div>
         </dialog>
+
         <section
           id="card-container"
           class="md:w-8/12 grid gap-2 md:grid-cols-3 mt-5 md:mt-0"

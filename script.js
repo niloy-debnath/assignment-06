@@ -5,9 +5,11 @@ const categoriesContainer = document.getElementById("categories-container");
 const cardContainer = document.getElementById("card-container");
 
 const modalContainer = document.getElementById("modal-container");
+
 const cartContainer = document.getElementById("cart-container");
 let total = document.getElementById("total").innerText;
-// console.log(total.innerText);
+
+const Spinner = document.getElementById("spinner");
 // Categories Fetching
 
 const loadCategories = () => {
@@ -59,13 +61,15 @@ loadCategories();
 // categories details fetching
 
 const loadCategoriesDetails = (id) => {
+  manageSpinner(true);
   const url = `https://openapi.programming-hero.com/api/category/${id}`;
   fetch(url)
     .then((res) => res.json())
-    .then((categoriesCards) => displayCategoriesDetails(categoriesCards.plants))
-    .catch((err) => {
-      console.log(err);
-    });
+    .then((categoriesCards) => {
+      displayCategoriesDetails(categoriesCards.plants);
+      manageSpinner(false);
+    })
+    .catch(() => manageSpinner(false));
 };
 
 const displayCategoriesDetails = (categoriesCard) => {
@@ -102,6 +106,7 @@ ${card.description}
 
 const loadPlantDetails = (id) => {
   // console.log(id);
+  manageSpinner(true);
   fetch(`https://openapi.programming-hero.com/api/plant/${id}`)
     .then((res) => res.json())
     .then((plant) => {
@@ -139,6 +144,7 @@ ${plant.description}
 
   `;
   document.getElementById("my_modal_5").showModal();
+  manageSpinner(false);
 };
 
 cardContainer.addEventListener("click", (e) => {
@@ -147,6 +153,9 @@ cardContainer.addEventListener("click", (e) => {
     const priceText = e.target.parentNode.children[2].children[1].innerText; // "৳120"
     const price = parseInt(priceText.replace("৳", "")); // convert to number
 
+    alert(
+      `${e.target.parentNode.children[1].children[0].innerText} added to the cart`
+    );
     // update total
     let totalElement = document.getElementById("total");
     let currentTotal = parseInt(totalElement.innerText);
@@ -158,7 +167,7 @@ cardContainer.addEventListener("click", (e) => {
       "bg-[#F0FDF4] flex justify-between items-center p-2 my-2 rounded-md";
     cartItem.innerHTML = `
       <div>
-        <h1>${name}</h1>
+        <h1 class="font-bold">${name}</h1>
         <h2>৳${price}</h2>
       </div>
       <div>
@@ -188,9 +197,14 @@ const deduct = (price, cartItem) => {
 
 // All Plants Load
 const loadAllPlants = () => {
+  manageSpinner(true);
   fetch("https://openapi.programming-hero.com/api/plants")
     .then((res) => res.json())
-    .then((plants) => displayAllPlants(plants.plants));
+    .then((plants) => {
+      displayAllPlants(plants.plants);
+      manageSpinner(false);
+    })
+    .catch(() => manageSpinner(false));
 };
 
 const displayAllPlants = (plants) => {
@@ -226,5 +240,16 @@ ${plant.description}
   `;
   });
 };
+
+const manageSpinner = (status) => {
+  if (status == true) {
+    Spinner.classList.remove("hidden");
+    cardContainer.classList.add("hidden");
+  } else {
+    Spinner.classList.add("hidden");
+    cardContainer.classList.remove("hidden");
+  }
+};
+
 loadCategories();
 loadAllPlants();
