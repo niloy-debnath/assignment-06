@@ -186,4 +186,45 @@ const deduct = (price, cartItem) => {
   cartItem.remove();
 };
 
-loadCategoriesDetails();
+// All Plants Load
+const loadAllPlants = () => {
+  fetch("https://openapi.programming-hero.com/api/plants")
+    .then((res) => res.json())
+    .then((plants) => displayAllPlants(plants.plants));
+};
+
+const displayAllPlants = (plants) => {
+  console.log(plants);
+  cardContainer.innerHTML = "";
+  plants.forEach((plant) => {
+    cardContainer.innerHTML += `
+   <div  class="bg-white p-3 rounded-md">
+            <div class="md:aspect-[4/3] w-full">
+              <img
+                class="rounded-md w-full h-48 md:h-48 md:object-cover"
+                src="${plant.image}"
+              />
+            </div>
+            <div class="flex-1 flex flex-col">
+              <h2 onClick="loadPlantDetails(${plant.id})" class="font-bold hover:text-xl md:my-3"> ${plant.name} </h2>
+              <p class="text-[#71717A] text-sm flex-1">
+${plant.description}
+              </p>
+            </div>
+            <div class="flex justify-between mt-3 items-center">
+              <div class="bg-[#DCFCE7] py-2 px-4 rounded-3xl">
+                <h2 class="text-[#15803D]">${plant.category}</h2>
+              </div>
+              <h2 class="font-bold">৳${plant.price}</h2>
+            </div>
+            <button
+              class="text-white add-to-cart-btn bg-[#15803D] w-full my-3 py-2 rounded-3xl"
+            >
+              Add to Cart
+            </button>
+          </div>
+  `;
+  });
+};
+loadCategories();
+loadAllPlants();
