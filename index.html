@@ -38,26 +38,66 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   </head>
   <body class="bg-[#F0FDF4]">
-    <header class="bg-[#15803D] px-5 py-5">
-      <nav class="flex justify-between max-w-7xl mx-auto items-center">
-        <div>
-          <h1 class="text-white font-bold md:text-xl">Green Earth</h1>
+    <header class="bg-[#15803D]">
+      <div class="navbar max-w-7xl mx-auto">
+        <div class="navbar-start">
+          <div class="dropdown">
+            <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-5 w-5 text-white"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h8m-8 6h16"
+                />
+              </svg>
+            </div>
+            <ul
+              tabindex="0"
+              class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
+            >
+              <li><a>About</a></li>
+              <li><a>Gallery</a></li>
+              <!-- <li>
+                <a>Parent</a>
+                <ul class="p-2">
+                  <li><a>Submenu 1</a></li>
+                  <li><a>Submenu 2</a></li>
+                </ul>
+              </li> -->
+              <li><a>Plant a Tree</a></li>
+            </ul>
+          </div>
+          <a class="btn btn-ghost text-xl text-white">Green Earth</a>
         </div>
-        <div class="text-white">
-          <ul class="flex gap-5">
-            <li class="text-sm"><a href="">About</a></li>
-            <li class="text-sm"><a href="">Gallery</a></li>
-            <li class="text-sm"><a href="">Plant a Tree</a></li>
+        <div class="navbar-center hidden lg:flex">
+          <ul class="menu menu-horizontal px-1 text-white">
+            <li><a>About</a></li>
+            <li><a>Gallery</a></li>
+            <!-- <li>
+              <details>
+                <summary>Parent</summary>
+                <ul class="p-2">
+                  <li><a>Submenu 1</a></li>
+                  <li><a>Submenu 2</a></li>
+                </ul>
+              </details>
+            </li> -->
+            <li><a>Plant a Tree</a></li>
           </ul>
         </div>
-        <div>
-          <button
-            class="bg-[#FACC15] px-3 md:px-4 md:py-2 py-1 rounded-3xl text-[#15803D]"
+        <div class="navbar-end">
+          <a class="bg-[#FACC15] px-4 py-2 rounded-3xl text-[#15803D] my-5"
+            >Button</a
           >
-            Plant a Tree
-          </button>
         </div>
-      </nav>
+      </div>
     </header>
     <main>
       <!-- Hero Section -->
